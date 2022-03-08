@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.imageeditordemo.ui.main.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.edit.EditFragment">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/margin_normal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/margin_normal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_normal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_normal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/margin_normal"
+            app:layout_constraintTop_toTopOf="@id/guideline_top"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintBottom_toTopOf="@id/btn_rotate"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_crop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_crop"
+            android:onClick="@{() -> viewModel.cropSelectedImage()}"
+            android:layout_marginHorizontal="@dimen/margin_normal"
+            app:layout_constraintEnd_toEndOf="@id/guideline_middle"
+            app:layout_constraintBottom_toTopOf="@id/btn_undo"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_rotate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_rotate"
+            android:onClick="@{() -> viewModel.rotateSelectedImage()}"
+            android:layout_marginHorizontal="@dimen/margin_normal"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle"
+            app:layout_constraintBottom_toTopOf="@id/btn_save"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_undo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_undo"
+            android:onClick="@{() -> viewModel.undoSelectedImage()}"
+            android:layout_marginHorizontal="@dimen/margin_normal"
+            app:layout_constraintEnd_toEndOf="@id/guideline_middle"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_save"
+            android:layout_marginHorizontal="@dimen/margin_normal"
+            app:layout_constraintStart_toStartOf="@id/guideline_middle"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

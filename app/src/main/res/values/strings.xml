@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Image Editor Demo</string>
+
+    <string name="screen_home">Home</string>
+    <string name="screen_edit">Edit</string>
+
+    <string name="text_take_selfie">Take Selfie</string>
+    <string name="text_upload_gallery">Upload</string>
+    <string name="text_crop">Crop</string>
+    <string name="text_rotate">Rotate</string>
+    <string name="text_undo">Undo</string>
+    <string name="text_save">Save</string>
+
+    <string name="text_image_save">Image saved successfully</string>
+    <string name="text_image_not_saved">Image not saved</string>
+
+    <string name="permission_denied_camera">Camera permission required! Kindly accept it</string>
+    <string name="permission_denied_storage">Storage permission required! Kindly accept it</string>
+</resources>
